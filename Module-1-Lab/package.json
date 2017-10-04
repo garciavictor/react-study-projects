@@ -1,0 +1,14 @@
+{
+  "name": "module-1-lab",
+  "version": "1.0.0",
+  "description": "Assignment for module 1 - EDX REACTJS COURSE.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Victor Garcia",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.10.0"
+  }
+}

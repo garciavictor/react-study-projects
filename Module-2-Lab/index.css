@@ -1,0 +1,27 @@
+body {
+    margin-top: 40px;
+}
+button {
+    height: 80px;
+    width: 400px;
+    margin-bottom: 5px;
+}
+
+.buttonArea{
+    width: 400px;
+}
+
+.question{
+    color: #00897b ;
+    font-size: 20px;
+    width: 400px;
+    height: 100px;
+}
+
+#correct{
+    color: #64dd17;
+}
+
+#incorrect{
+    color: #d50000
+}

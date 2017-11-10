@@ -1,0 +1,29 @@
+[type="checkbox"]+label{
+    color: #000;
+}
+
+#dropdown{
+    width: 180px;
+    height: 20;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+#formCard{
+    margin-right: 50px;
+    padding-right: 50px 
+}
+
+#submitButton{
+    margin-top: 15px;
+    margin-bottom: 15px
+}
+
+#removeButton{
+    background: #f44336;
+    text-align: center
+}
+
+#removeButton:hover{
+    background: #d32f2f
+}

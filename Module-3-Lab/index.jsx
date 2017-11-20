@@ -9,7 +9,6 @@ class FormContainer extends React.Component {
             restrictions: [],
             restrictionsBool: [false,false,false]
         }
-
     }
 
     render(){

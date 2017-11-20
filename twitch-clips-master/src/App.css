@@ -1,0 +1,117 @@
+body {
+    background-color: #0e0c13;
+    color: #fff;
+    font-weight: 200;
+}
+
+.app {
+    padding: 2%;
+    text-align: center;
+}
+
+.app-title {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 8px;
+    word-spacing: 5px;
+}
+
+.form-group {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.form-input {
+    width: 55%;
+    height: 55%;
+    margin: auto;
+}
+
+.input-field .prefix {
+    padding-top: 10px
+}
+
+i.small {
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+.gallery {
+    margin-top: 30px;
+}
+
+.gallery-title {
+    font-size: 26px;
+    margin-left: 16%;
+    display: flex;
+    letter-spacing: 8px;
+}
+
+.clip-video {
+    padding-bottom: 20px;
+    margin-left: 5%;
+}
+
+.profile {
+    display: flex;
+    justify-content: center
+}
+
+.profile-info {
+    margin-left: 10px;
+    text-align: left;
+}
+
+.profile-img {
+    border: 5px solid #fff;
+    width: 150px;
+    height: 150px;
+    text-align: left;
+    object-fit: cover;
+}
+
+.profile-name,
+.profile-url,
+.profile-followers {
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+.clips-title {
+    font-size: 26px;
+    margin-left: 23%;
+}
+
+.clips-gallery {
+    margin-top: 40px;
+}
+
+.input-field label {
+    color: #FFF;
+}
+
+.input-field label.active {
+    color: #FFF !important;
+}
+
+.input-field input[type=text]:focus {
+    color: #FFF !important;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 1px solid #4B367C !important;
+    box-shadow: 0 1px 0 0 #4B367C !important;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly])+label {
+    color: #FFF
+}
+
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #4B367C !important;
+    box-shadow: 0 1px 0 0 #4B367C !important;
+}
+
+.input-field .prefix.active {
+    color: #4B367C !important;
+}

@@ -1,0 +1,48 @@
+.app {
+    margin: 3%;
+    text-align: center;
+}
+
+.app-title {
+    font-size: 26px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    align-items: center;
+}
+
+.input-todo {
+    width: 50% !important;
+    margin-bottom: 20px;
+}
+
+.todo-list-view {
+    width: 50%;
+    margin: auto;
+    height: 150px;
+}
+
+.segment-item {
+    text-align: left;
+    vertical-align: middle;
+}
+
+.todo-item {
+    font-size: 16px !important;
+    font-weight: bold;
+}
+
+.todo-delete-button {
+    float: right;
+    cursor: pointer;
+}
+
+.date-picker {
+    margin: auto;
+    margin-bottom: 40px !important;
+    width: 230px !important;
+}
+
+

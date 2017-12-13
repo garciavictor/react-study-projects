@@ -1,0 +1,90 @@
+body {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.sign-segment {
+    text-align: center;
+    align-content: center;
+    margin: 10% auto auto !important;
+    width: 30%;
+    height: 40%;
+    -webkit-box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.36) !important;
+    -moz-box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.36) !important;
+    box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.36) !important;
+}
+
+.form-group {
+    display: grid;
+    margin: auto;
+}
+
+.sign-title {
+    color: white;
+    word-spacing: 3px;
+    letter-spacing: 3px;
+}
+
+.input {
+    margin-bottom: 10px;
+}
+
+.ui.blue.button, .ui.green.button {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.error-message {
+    margin-top: 10px;
+    text-align: left;
+    color: #E0321C;
+}
+
+.sign-link {
+    margin-top: 10px;
+}
+
+.add-goal-input {
+    width: 400px;
+}
+
+.submit-goal {
+    background-color: #21BA45 !important;
+    color: white !important;
+}
+
+.goals-title {
+    word-spacing: 5px;
+    letter-spacing: 10px;
+    margin-top: 3% !important;
+    margin-bottom: 20px !important;
+    text-align: center;
+}
+
+.form-goal {
+    text-align: center;
+    align-content: center;
+}
+
+.sign-out, .clear-button {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.segment-goal-list, .segment-complete-goal-list, .completed-goals  {
+    width: 50%;
+    margin: auto !important;
+}
+
+.divider {
+    margin-bottom: 25px !important;
+}
+
+.completed-goals, .goals {
+    margin-top: 20px !important;
+    margin-bottom: 5px !important;
+    text-align: center;
+    font-size: 16px;
+    word-spacing: 5px;
+    letter-spacing: 5px;
+}

@@ -1,106 +1,68 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { addTodo, deleteTodo, clearTodos } from '../actions'
-import { Button, Input, Form, Segment, Icon } from 'semantic-ui-react'
-
+import React, { useState, useContext } from 'react'
+import { addTodoAction, deleteTodoAction, clearTodosAction } from '../actions'
+import { Button, Input, Form } from 'semantic-ui-react'
+import Todos from './Todos'
 import 'react-widgets/dist/css/react-widgets.css'
 
 import moment from 'moment'
 import DateTimePicker from 'react-widgets/lib/DateTimePicker'
 import momentLocalizer from 'react-widgets-moment'
+import { TodoContext } from '../context/TodoContext';
 
 moment.locale('en')
 momentLocalizer()
 
 
-class FormGroup extends Component {
-    constructor(props){
-        super(props)
 
-        this.state = {
-            text: '',
-            dueDate: moment() 
-        }
-        
-        this.handleDateTimeChange = this.handleDateTimeChange.bind(this);
+
+
+function FormGroup(props) {
+    const [state, dispatch] = useContext(TodoContext);
+    const [text, setText] = useState('');
+    const [dueDate, setDueDate] = useState(moment());
+
+    const handleDateTimeChange = (date) => {
+        setDueDate(date);
     }
 
-    addTodo(){
-        this.props.addTodo(this.state.text, this.state.dueDate)
-        this.setState({
-            text: ''
-        })
+    const addTodo = () => {
+        dispatch(addTodoAction(text, dueDate))
+        setText('');
     }
 
-    deleteTodo(id){
-        this.props.deleteTodo(id)
+    const deleteTodo = (id) => {
+        dispatch(deleteTodoAction(id))
     }
 
-    handleDateTimeChange(date){
-        this.setState({
-            dueDate: date
-        });
-    }
-
-    renderTodo(){
-        const  { todos } = this.props
-        return (
-            <Segment.Group>
-                { todos.map( todo => {
-                    return (
-                        <Segment key={todo.id} clearing className="segment-item">
-                            <span className="todo-item">{todo.text}</span> 
-                            <em> { moment(new Date(todo.dueDate)).fromNow() }</em>
-                            <Icon  
-                                className="todo-delete-button" 
-                                onClick={ () => { this.deleteTodo(todo.id) } } 
-                                name='delete'
-                            />
-                        </Segment>
-                    )
-                })}
-            </Segment.Group>
-        )
-    }
-
-    render(){
-        return (
-            <div>
-                <Form className="form-group">
-                    <Form.Field>
-                        <Input 
-                            className="input-todo"
-                            size="large"
-                            action={<Button color='blue' onClick={ () => { this.addTodo() }}> ADD TODO </Button>} 
-                            placeholder="I have to ..."
-                            value={this.state.text} 
-                            onChange={ event => this.setState({ text: event.target.value })}
-                            />
-                        <div>
-                            <DateTimePicker 
-                                className="date-picker"
-                                placeholder="Date/Time"
-                                onChange={this.handleDateTimeChange}
-                                step={15}
-                            />
-                        </div>
-                    </Form.Field>
-                </Form>
-                <div className="todo-list-view">
-                    { this.renderTodo() }
-                    <Button negative onClick={ () => this.props.clearTodos() }>
-                        CLEAR TODOS
-                    </Button>
-                </div>
+    return (
+        <div>
+            <Form className="form-group">
+                <Form.Field>
+                    <Input 
+                        className="input-todo"
+                        size="large"
+                        action={<Button color='blue' onClick={ () => { addTodo() }}> ADD TODO </Button>} 
+                        placeholder="I have to ..."
+                        value={text} 
+                        onChange={event => setText(event.target.value)}
+                        />
+                        <DateTimePicker 
+                            className="date-picker"
+                            placeholder="Date/Time"
+                            onChange={ (date) => handleDateTimeChange(date) }
+                            step={15}
+                        />
+                </Form.Field>
+            </Form>
+            <div className="todo-list-view">
+                <Todos todos={state} deleteTodo={deleteTodo}/>
+                <Button negative onClick={ () => dispatch(clearTodosAction()) }>
+                    CLEAR TODOS
+                </Button>
             </div>
-        )
-    }   
+        </div>
+    )
+
 }
 
-function mapStateToProps(state){
-    return {
-        todos: state 
-    }
-}
-
-export default connect(mapStateToProps, { addTodo, deleteTodo, clearTodos })(FormGroup)
+export default FormGroup

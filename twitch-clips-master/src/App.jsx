@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Form from './Form.jsx'
 import Profile from './Profile.jsx'
 import Gallery from './Gallery.jsx'
-import twitchApi from './twitchApiService.js'
+//import twitchApi from './twitchApiService.js'
 import { Icon } from 'react-materialize'
 
 import './App.css'
@@ -31,7 +31,7 @@ class App extends Component{
             method: 'GET',
             headers: new Headers({
                 'Accept': 'application/vnd.twitchtv.v5+json',
-                'Client-ID': 'TWITCH-API-KEY'
+                'Client-ID': '81g3gdizi2amlwzeeh4pskltvrz88f'
 
             })
         }
@@ -60,7 +60,7 @@ class App extends Component{
             method: 'GET',
             headers: new Headers({
                 'Accept': 'application/vnd.twitchtv.v5+json',
-                'Client-ID': 'TWITCH-API-KEY'
+                'Client-ID': '81g3gdizi2amlwzeeh4pskltvrz88f'
             })
         }
 
@@ -89,8 +89,8 @@ class App extends Component{
                         />
                     : <div></div>
                 }
-                {
-                    this.state.clips.length !== 0 && this.state.clips
+                {                   
+                    this.state.clips !== 0 && this.state.clips
                     ?   <div>
                             <span className="gallery-title"><Icon small>video_library</Icon>Most Recent Clips</span>
                             <Gallery clips = {this.state.clips}/>

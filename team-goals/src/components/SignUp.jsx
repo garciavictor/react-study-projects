@@ -56,9 +56,6 @@ class SignUp extends Component {
                     <Button content='SIGN UP' color="blue" onClick={ () => { this.signUp() }}/>
                 </div>
                 <div className="sign-link">
-                    <Link to="/signin">
-                        Already a user? Sign In.
-                    </Link>
                 </div>
             </Segment>
         )

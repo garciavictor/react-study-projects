@@ -15,7 +15,7 @@ const removeById = ( state = [], id ) => {
     return todos
 }
 
-const todos = ( state = [], action ) => {
+const reducer = ( state = [], action ) => {
     let todos = null
     state = read_cookie('todos')
     switch(action.type) {
@@ -36,4 +36,4 @@ const todos = ( state = [], action ) => {
     }
 }
 
-export default todos
+export default reducer
